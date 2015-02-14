@@ -15,7 +15,6 @@ install:
     - echo "y" | android update sdk -a --filter platform-tools,tools,build-tools-21.1.2,extra-android-m2repository,extra-google-m2repository,android-21,extra-google-google_play_services,sys-img-armeabi-v7a-android-21 --no-ui --force
     - java -version
     - javac -version
-    - ls -laR /home/shippable/workspace/src/github.com/ffagerho/lokki-android/android-sdk-linux/
     - ./gradlew clean assemble
 
 before_script:
