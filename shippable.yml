@@ -4,6 +4,8 @@ jdk:
     - oraclejdk7
 
 before_install:
+    - sudo apt-get update
+    - sudo apt-get install -u lib32stdc++6 lib32z1
     - echo "BEFORE_INSTALL"
 
 install:
