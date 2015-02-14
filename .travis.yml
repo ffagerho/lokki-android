@@ -18,7 +18,7 @@ android:
     - sys-img-armeabi-v7a-android-21
 
 before_install:
-  - echo no | android create avd --force -n testAvd -t android-21 --abi armeabi-v7a --skin WXGA720
+  - echo no | android create avd --force -n testAvd -t android-21 --abi armeabi-v7a --skin WSVGA
   - emulator -avd testAvd -no-audio -no-window -scale 1 &
 
 before_script:
