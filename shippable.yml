@@ -16,15 +16,16 @@ before_install:
     - export ANDROID_HOME=`pwd`/android-sdk-linux
     - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
-    # create and start emulator
-    - echo no | android create avd --force -n testAvd -t android-21 --abi armeabi-v7a --skin WSVGA
-    - emulator -avd testAvd -no-audio -no-window -scale 1 &
-
 install:
     - echo "y" | android update sdk -a --filter platform-tools,tools,build-tools-21.1.2,extra-android-m2repository,extra-google-m2repository,android-21,extra-google-google_play_services,sys-img-armeabi-v7a-android-21 --no-ui --force
 
 before_script:
     - mkdir -p shippable/testresults
+
+    # create and start emulator
+    - android list targets
+    - echo no | android create avd --force -n testAvd -t android-21 --abi armeabi-v7a --skin WSVGA
+    - emulator -avd testAvd -no-audio -no-window -scale 1 &
     - ./android-wait-for-emulator
 
 script:
