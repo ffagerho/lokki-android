@@ -15,7 +15,7 @@ android:
     - android-21
     - extra-google-google_play_services
     - extra-android-m2repository
-    - sys-img-21
+    - sysimg-x86-android-21
 
 before_install:
   - echo no | android create avd --force -n testAvd -t android-21 --abi x86
