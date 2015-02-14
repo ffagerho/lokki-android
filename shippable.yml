@@ -28,8 +28,8 @@ before_script:
 
     # create and start emulator
     - android list targets
-    - echo no | android create avd --force -n testAvd -t android-21 --abi x86 --skin WSVGA
-    - emulator64-x86 -avd testAvd -no-audio -no-window -scale 1 &
+    - echo no | android create avd --force -n testAvd -t android-21 --abi armeabi-v7a --skin WSVGA
+    - emulator64-arm -avd testAvd -no-audio -no-window -scale 1 &
     - ./android-wait-for-emulator
 
 script:
