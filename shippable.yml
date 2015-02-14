@@ -19,9 +19,12 @@ install:
 before_script:
     - mkdir -p shippable/testresults
 
+    - uname -a
     - echo ${PATH}
     - ls -la android-sdk-linux/
     - ls -la android-sdk-linux/tools/
+    - ls -la /home/shippable/workspace/src/github.com/ffagerho/lokki-android/android-sdk-linux/tools/emulator
+    - file /home/shippable/workspace/src/github.com/ffagerho/lokki-android/android-sdk-linux/tools/emulator
 
     # create and start emulator
     - android list targets
