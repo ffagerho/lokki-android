@@ -4,9 +4,7 @@ jdk:
     - oraclejdk7
 
 before_install:
-    # install necessary x32-libs for Android SDK
-    - sudo apt-get update
-    - sudo apt-get install -u lib32stdc++6 lib32z1
+    - echo "BEFORE_INSTALL"
 
 install:
     # download and extract Android SDK
