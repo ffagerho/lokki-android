@@ -8,6 +8,7 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install -u lib32stdc++6 lib32z1
 
+install:
     # download and extract Android SDK
     - java -version
     - javac -version
@@ -15,8 +16,6 @@ before_install:
     - tar xzf android-sdk_r24.0.2-linux.tgz
     - export ANDROID_HOME=`pwd`/android-sdk-linux
     - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-
-install:
     - echo "y" | android update sdk -a --filter platform-tools,tools,build-tools-21.1.2,extra-android-m2repository,extra-google-m2repository,android-21,extra-google-google_play_services,sys-img-armeabi-v7a-android-21 --no-ui --force
 
 before_script:
