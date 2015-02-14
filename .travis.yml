@@ -15,10 +15,10 @@ android:
     - android-21
     - extra-google-google_play_services
     - extra-android-m2repository
-    - sys-img-armeabi-v7a-android-21
+    - sysimg-21
 
 before_install:
-  - echo no | android create avd --force -n testAvd -t android-21 --abi armeabi-v7a
+  - echo no | android create avd --force -n testAvd -t android-21 --abi x86
   - emulator -avd testAvd -no-skin -no-audio -no-window &
 
 before_script:
