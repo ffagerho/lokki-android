@@ -22,6 +22,9 @@ before_script:
 
     - mkdir -p shippable/testresults
 
+    - ls -la android-sdk-linux/
+    - ls -la android-sdk-linux/tools/
+
     # create and start emulator
     - android list targets
     - echo no | android create avd --force -n testAvd -t android-21 --abi armeabi-v7a --skin WSVGA
