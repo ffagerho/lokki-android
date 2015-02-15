@@ -33,11 +33,12 @@ before_script:
     - sed -i 's/hw.ramSize=512/hw.ramSize=1024/g' ${ANDROID_HOME}/platforms/android-21/skins/WVGA800/hardware.ini
     - android list targets
     - echo no | android create avd --force -n testAvd -t android-21 --abi armeabi-v7a --skin WVGA800
-    - emulator64-arm -avd testAvd -no-audio -no-window -no-boot-anim -scale 1 &
+    - emulator64-arm -avd testAvd -no-audio -no-window -scale 1 &
     - ps fuwax
     - adb devices
     - ./android-wait-for-emulator
     - adb shell input keyevent 82
+    - adb devices
 
 script:
     - ./gradlew build connectedCheck
